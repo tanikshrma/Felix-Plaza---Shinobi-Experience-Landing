@@ -1,14 +1,10 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Flame, Users, Clock, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Flame } from 'lucide-react';
 import trainingImg from '../assets/images/shinobi_training_1789708824144.jpg';
 import gamesImg from '../assets/images/ninja_games_1789708846056.jpg';
 import challengesImg from '../assets/images/ultimate_challenges_1789708867687.jpg';
 
-interface Props {
-  onRegisterActivity: (activityTitle: string) => void;
-}
-
-export const Activities: React.FC<Props> = ({ onRegisterActivity }) => {
+export const Activities = ({ onRegisterActivity }) => {
   const activities = [
     {
       id: 'training',
@@ -189,7 +185,7 @@ export const Activities: React.FC<Props> = ({ onRegisterActivity }) => {
                     {/* Action CTA */}
                     <div>
                       <button
-                        onClick={() => onRegisterActivity(act.title)}
+                        onClick={() => onRegisterActivity && onRegisterActivity(act.title)}
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-gradient-to-r from-[#890909] to-[#F04416] hover:from-[#A61B18] hover:to-[#FF6600] text-white font-dela text-sm tracking-wider border border-[#FFB52E]/30 shadow-lg shadow-black/60 transition-all duration-200 cursor-pointer"
                       >
                         <span>ENROLL IN {act.title}</span>

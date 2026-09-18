@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Flame } from 'lucide-react';
 import logoImg from '../assets/images/logo.avif';
 
-export const Header: React.FC = () => {
+export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id) => {
     setMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {

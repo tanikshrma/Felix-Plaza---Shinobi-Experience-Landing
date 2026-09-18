@@ -1,7 +1,7 @@
 import React from 'react';
 import { Target, Zap, Award } from 'lucide-react';
 
-export const EventIntro: React.FC = () => {
+export const EventIntro = () => {
   return (
     <section
       id="intro"

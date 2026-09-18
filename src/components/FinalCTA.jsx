@@ -2,11 +2,7 @@ import React from 'react';
 import { ArrowRight, Flame } from 'lucide-react';
 import { EmberParticles } from './EmberParticles';
 
-interface Props {
-  onRegisterClick: () => void;
-}
-
-export const FinalCTA: React.FC<Props> = ({ onRegisterClick }) => {
+export const FinalCTA = ({ onRegisterClick }) => {
   return (
     <section className="relative py-24 sm:py-36 bg-[#090505] overflow-hidden border-t border-[#5A0808]">
       {/* Fiery Texture & Radial Ambient Atmosphere */}

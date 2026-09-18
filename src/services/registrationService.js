@@ -1,16 +1,14 @@
-import { RegistrationFormData, RegistrationRecord } from '../types';
-
 const STORAGE_KEY = 'shinobi_event_registrations';
 
 export const registrationService = {
-  async submitRegistration(data: RegistrationFormData): Promise<RegistrationRecord> {
+  async submitRegistration(data) {
     // Simulate brief network / ninja seal validation delay
     await new Promise((resolve) => setTimeout(resolve, 850));
 
     const passNumber = Math.floor(1000 + Math.random() * 9000);
     const squadCode = data.numberOfParticipants > 1 ? `SQUAD-${passNumber}` : `NINJA-${passNumber}`;
 
-    const newRecord: RegistrationRecord = {
+    const newRecord = {
       ...data,
       id: `reg_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
       passCode: `SHINOBI-82A-${squadCode}`,
@@ -31,7 +29,7 @@ export const registrationService = {
     return newRecord;
   },
 
-  getAll(): RegistrationRecord[] {
+  getAll() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {

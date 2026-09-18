@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapPin, Navigation, Car, Train, Clock, Compass, Shield } from 'lucide-react';
 
-export const Location: React.FC = () => {
+export const Location = () => {
   const directionsUrl =
     'https://www.google.com/maps/search/?api=1&query=Felix+Plaza+Sector+82A+Gurugram';
 

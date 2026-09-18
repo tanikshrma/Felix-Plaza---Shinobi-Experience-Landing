@@ -1,13 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
-interface Props {
-  count?: number;
-  className?: string;
-}
-
-export const EmberParticles: React.FC<Props> = ({ count = 16, className = '' }) => {
+export const EmberParticles = ({ count = 16, className = '' }) => {
   // Generate stable deterministic particle properties
-  const embers = React.useMemo(() => {
+  const embers = useMemo(() => {
     return Array.from({ length: count }, (_, i) => ({
       id: i,
       left: `${(i * 100) / count + (i % 3) * 3}%`,

@@ -1,13 +1,8 @@
 import React from 'react';
 import { ArrowUpRight, GraduationCap, Gamepad2, ShieldCheck, Trophy } from 'lucide-react';
-import { HighlightItem } from '../types';
 
-interface Props {
-  onSelectHighlight?: (id: string) => void;
-}
-
-export const ExperienceHighlights: React.FC<Props> = ({ onSelectHighlight }) => {
-  const highlights: (HighlightItem & { icon: React.ElementType })[] = [
+export const ExperienceHighlights = ({ onSelectHighlight }) => {
+  const highlights = [
     {
       id: 'workshops',
       number: '01',
@@ -50,7 +45,7 @@ export const ExperienceHighlights: React.FC<Props> = ({ onSelectHighlight }) => 
     },
   ];
 
-  const handleCardClick = (id: string) => {
+  const handleCardClick = (id) => {
     if (onSelectHighlight) {
       onSelectHighlight(id);
     }
