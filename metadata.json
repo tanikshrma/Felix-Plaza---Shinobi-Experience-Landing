@@ -1,0 +1,8 @@
+{
+  "name": "The Ultimate Shinobi Experience",
+  "description": "Event registration landing page for The Ultimate Shinobi Experience presented by Felix Plaza at Sector 82 A, Gurugram. Anime, ninja workshops, self defence, games, and exciting challenges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

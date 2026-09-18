@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-ninja-black: #050505;
+    --color-ninja-charcoal: #0D0D12;
+    --color-ninja-dark-purple: #160A18;
+    --color-naruto-orange: #FF6A00;
+    --color-bright-orange: #FF8A00;
+    --color-golden-yellow: #FFD21F;
+    --color-hot-pink: #F50087;
+    --color-deep-magenta: #C90068;
+    --color-cyan: #18D5C5;
+    --color-deep-cyan: #08AFA8;
+    --color-paper-cream: #FFF1D6;
+  }
+
+  body {
+    background-color: #050505;
+    color: #FFF1D6;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Bebas Neue', 'Dela Gothic One', sans-serif;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Custom Japanese and Poster Utilities */
+.font-kanji {
+  font-family: 'Yuji Boku', serif;
+}
+
+.font-dela {
+  font-family: 'Dela Gothic One', sans-serif;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+.font-serif-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-shojumaru {
+  font-family: 'Shojumaru', 'Dela Gothic One', cursive, sans-serif;
+}
+
+/* Torn paper effect */
+.torn-paper {
+  background-color: #FFF1D6;
+  color: #150707;
+  clip-path: polygon(
+    0% 4%, 3% 0%, 7% 5%, 12% 1%, 18% 4%, 25% 0%, 33% 4%, 42% 1%, 50% 5%, 58% 0%, 67% 4%, 75% 1%, 83% 5%, 92% 0%, 97% 4%, 100% 1%,
+    99% 94%, 95% 100%, 89% 95%, 82% 99%, 76% 94%, 68% 100%, 61% 95%, 52% 98%, 45% 94%, 36% 100%, 28% 95%, 21% 99%, 14% 94%, 6% 100%, 1% 96%
+  );
+}
+
+.torn-paper-edge-top {
+  clip-path: polygon(
+    0% 12px, 3% 0px, 7% 10px, 12% 2px, 18% 8px, 25% 0px, 33% 10px, 42% 3px, 50% 11px, 58% 0px, 67% 9px, 75% 2px, 83% 11px, 92% 0px, 97% 8px, 100% 2px,
+    100% 100%, 0% 100%
+  );
+}
+
+.torn-paper-edge-bottom {
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    100% calc(100% - 10px), 97% 100%, 92% calc(100% - 12px), 83% calc(100% - 2px), 75% calc(100% - 10px), 67% calc(100% - 3px), 58% 100%, 50% calc(100% - 9px), 42% calc(100% - 2px), 33% calc(100% - 11px), 25% 100%, 18% calc(100% - 8px), 12% calc(100% - 2px), 7% calc(100% - 10px), 3% 100%, 0% calc(100% - 10px)
+  );
+}
+
+/* Diagonal Japanese ninja slash aesthetic */
+.ninja-slant-r {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 0 100%);
+}
+
+.ninja-slant-l {
+  clip-path: polygon(0 0, 100% 20px, 100% 100%, 0 100%);
+}
+
+/* Subtle poster grain overlay */
+.poster-grain {
+  background-image: radial-gradient(rgba(255, 106, 0, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Ember floating keyframe */
+@keyframes floatEmber {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-240px) translateX(30px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-ember {
+  animation: floatEmber 6s infinite linear;
+}
+
+/* Pulse glow for primary CTA */
+@keyframes flamePulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(255, 106, 0, 0.45), 0 0 50px rgba(255, 210, 31, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 106, 0, 0.8), 0 0 65px rgba(245, 0, 135, 0.45);
+  }
+}
+
+.flame-glow {
+  animation: flamePulse 3s infinite ease-in-out;
+}
+
+/* Cyan accent line & chakra pulse */
+@keyframes chakraPulse {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(24, 213, 197, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(24, 213, 197, 0.7);
+  }
+}
+
+.chakra-pulse {
+  animation: chakraPulse 2.5s infinite ease-in-out;
+}
+
