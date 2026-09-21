@@ -27,22 +27,22 @@ const TORN_PAPER_TAGS = [
 export const Hero = () => {
   return (
     <header className="flex flex-col items-center text-center mb-8 sm:mb-10 w-full">
-      {/* Mobile Header: Separate Top Row for Sony (Top-Left) & Crunchyroll (Top-Right), with Felix Plaza centered below */}
+      {/* Mobile Header: Separate Top Row for Crunchyroll (Top-Left) & Sony (Top-Right), with Felix Plaza centered below */}
       <div className="w-full flex flex-col sm:hidden pt-0 pb-1.5">
-        {/* Top Row: Sony on left, Crunchyroll on right (Enlarged, minimal top spacing) */}
+        {/* Top Row: Crunchyroll on left, Sony on right (Enlarged, minimal top spacing) */}
         <div className="w-full flex items-center justify-between px-1.5 min-[380px]:px-2.5 pt-0 pb-1.5">
           <div className="flex items-center justify-start shrink-0">
-            <img
-              src={sonyLogoImg}
-              alt="Sony"
-              className="h-10 min-[380px]:h-12 min-[420px]:h-14 w-auto max-w-[130px] min-[380px]:max-w-[150px] object-contain drop-shadow-xl"
-            />
-          </div>
-          <div className="flex items-center justify-end shrink-0">
             <img
               src={crunchyrollLogoImg}
               alt="Crunchyroll"
               className="h-9 min-[380px]:h-11 min-[420px]:h-12 w-auto max-w-[140px] min-[380px]:max-w-[160px] object-contain brightness-110 drop-shadow-xl"
+            />
+          </div>
+          <div className="flex items-center justify-end shrink-0">
+            <img
+              src={sonyLogoImg}
+              alt="Sony"
+              className="h-10 min-[380px]:h-12 min-[420px]:h-14 w-auto max-w-[130px] min-[380px]:max-w-[150px] object-contain drop-shadow-xl"
             />
           </div>
         </div>
@@ -60,14 +60,14 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Desktop Header (>= sm): Single Row with Sony (Left) + Felix Plaza (Center) + Crunchyroll (Right) */}
+      {/* Desktop Header (>= sm): Single Row with Crunchyroll (Left) + Felix Plaza (Center) + Sony (Right) */}
       <div className="relative w-full hidden sm:flex items-center justify-center pt-1 pb-3 mb-2 px-4 min-h-[88px]">
-        {/* Left Side: Sony Logo */}
+        {/* Left Side: Crunchyroll Logo */}
         <div className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 flex items-center justify-start shrink-0">
           <img
-            src={sonyLogoImg}
-            alt="Sony"
-            className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-2xl"
+            src={crunchyrollLogoImg}
+            alt="Crunchyroll"
+            className="h-14 md:h-18 lg:h-20 w-auto object-contain brightness-110 drop-shadow-2xl"
           />
         </div>
 
@@ -83,12 +83,12 @@ export const Hero = () => {
           </span>
         </div>
 
-        {/* Right Side: Crunchyroll Logo */}
+        {/* Right Side: Sony Logo */}
         <div className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 flex items-center justify-end shrink-0">
           <img
-            src={crunchyrollLogoImg}
-            alt="Crunchyroll"
-            className="h-14 md:h-18 lg:h-20 w-auto object-contain brightness-110 drop-shadow-2xl"
+            src={sonyLogoImg}
+            alt="Sony"
+            className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-2xl"
           />
         </div>
       </div>
