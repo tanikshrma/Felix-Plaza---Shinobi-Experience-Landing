@@ -27,39 +27,69 @@ const TORN_PAPER_TAGS = [
 export const Hero = () => {
   return (
     <header className="flex flex-col items-center text-center mb-8 sm:mb-10 w-full">
-      {/* Top Header Banner Row: Centered Felix Plaza Logo + Top Right Crunchyroll & Sony Logos (No background, larger) */}
-      <div className="relative w-full flex flex-col sm:flex-row items-center justify-center pt-1 pb-3 mb-2">
-        {/* Center: Felix Plaza Logo & Presents */}
-        <div className="flex flex-col items-center justify-center text-center mx-auto">
+      {/* Mobile Header: Separate Top Row for Sony (Top-Left) & Crunchyroll (Top-Right), with Felix Plaza centered below */}
+      <div className="w-full flex flex-col sm:hidden pt-0 pb-1.5">
+        {/* Top Row: Sony on left, Crunchyroll on right (Enlarged, minimal top spacing) */}
+        <div className="w-full flex items-center justify-between px-1.5 min-[380px]:px-2.5 pt-0 pb-1.5">
+          <div className="flex items-center justify-start shrink-0">
+            <img
+              src={sonyLogoImg}
+              alt="Sony"
+              className="h-10 min-[380px]:h-12 min-[420px]:h-14 w-auto max-w-[130px] min-[380px]:max-w-[150px] object-contain drop-shadow-xl"
+            />
+          </div>
+          <div className="flex items-center justify-end shrink-0">
+            <img
+              src={crunchyrollLogoImg}
+              alt="Crunchyroll"
+              className="h-9 min-[380px]:h-11 min-[420px]:h-12 w-auto max-w-[140px] min-[380px]:max-w-[160px] object-contain brightness-110 drop-shadow-xl"
+            />
+          </div>
+        </div>
+
+        {/* Separate Center Row: Felix Plaza Logo & Presents */}
+        <div className="flex flex-col items-center justify-center text-center mx-auto my-1.5">
           <img
             src={logoImg}
             alt="Felix Plaza"
-            className="h-12 sm:h-16 md:h-20 w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] mx-auto"
+            className="h-12 min-[380px]:h-14 w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] mx-auto"
           />
-          <span className="text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.45em] text-[#FFD21F] uppercase mt-1.5 drop-shadow">
+          <span className="text-[11px] min-[380px]:text-xs font-bold tracking-[0.45em] text-[#FFD21F] uppercase mt-1 drop-shadow">
+            P R E S E N T S
+          </span>
+        </div>
+      </div>
+
+      {/* Desktop Header (>= sm): Single Row with Sony (Left) + Felix Plaza (Center) + Crunchyroll (Right) */}
+      <div className="relative w-full hidden sm:flex items-center justify-center pt-1 pb-3 mb-2 px-4 min-h-[88px]">
+        {/* Left Side: Sony Logo */}
+        <div className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 flex items-center justify-start shrink-0">
+          <img
+            src={sonyLogoImg}
+            alt="Sony"
+            className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-2xl"
+          />
+        </div>
+
+        {/* Center: Felix Plaza Logo & Presents */}
+        <div className="flex flex-col items-center justify-center text-center mx-auto z-10 px-24">
+          <img
+            src={logoImg}
+            alt="Felix Plaza"
+            className="h-16 md:h-20 w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] mx-auto"
+          />
+          <span className="text-xs md:text-sm font-bold tracking-[0.45em] text-[#FFD21F] uppercase mt-1.5 drop-shadow whitespace-nowrap">
             P R E S E N T S
           </span>
         </div>
 
-        {/* Top Right: Crunchyroll Logo & Sony Logo (Stacked Vertically on Desktop) */}
-        <div className="sm:absolute sm:top-0 sm:right-0 flex flex-row sm:flex-col items-center sm:items-end justify-center gap-3 sm:gap-2.5 mt-4 sm:mt-0">
-          {/* Crunchyroll Logo */}
-          <div className="flex items-center justify-center sm:justify-end shrink-0">
-            <img
-              src={crunchyrollLogoImg}
-              alt="Crunchyroll"
-              className="h-8 sm:h-10 md:h-12 w-auto object-contain brightness-110 drop-shadow-xl"
-            />
-          </div>
-
-          {/* Sony Logo */}
-          <div className="flex items-center justify-center sm:justify-end shrink-0">
-            <img
-              src={sonyLogoImg}
-              alt="Sony"
-              className="h-9 sm:h-12 md:h-14 w-auto object-contain drop-shadow-xl"
-            />
-          </div>
+        {/* Right Side: Crunchyroll Logo */}
+        <div className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 flex items-center justify-end shrink-0">
+          <img
+            src={crunchyrollLogoImg}
+            alt="Crunchyroll"
+            className="h-14 md:h-18 lg:h-20 w-auto object-contain brightness-110 drop-shadow-2xl"
+          />
         </div>
       </div>
 

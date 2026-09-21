@@ -7,7 +7,7 @@ import {
   ShieldCheck,
   Trophy,
 } from 'lucide-react';
-import heroBannerImg from '../assets/images/shinobi_hero_banner_1789708801266.jpg';
+import naruto1920x1080Img from '../assets/images/Naruto - 1920x1080.avif';
 
 export const EventCards = () => {
   return (
@@ -20,7 +20,7 @@ export const EventCards = () => {
         {/* Photo Container with subtle editorial vignette */}
         <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-black">
           <img
-            src={heroBannerImg}
+            src={naruto1920x1080Img}
             alt="The Ultimate Shinobi Experience Featured Banner"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"

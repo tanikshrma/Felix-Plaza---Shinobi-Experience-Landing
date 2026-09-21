@@ -94,7 +94,7 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <div className="relative min-h-screen bg-[#050505] text-[#FFF1D6] font-sans selection:bg-[#FF6A00] selection:text-white overflow-hidden pt-10 sm:pt-14 pb-0 px-4 sm:px-6 lg:px-8">
+    <div className="relative min-h-screen bg-[#050505] text-[#FFF1D6] font-sans selection:bg-[#FF6A00] selection:text-white overflow-hidden pt-3 sm:pt-14 pb-0 px-3 sm:px-6 lg:px-8">
       {/* Background Graphic & Poster Atmosphere */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img
