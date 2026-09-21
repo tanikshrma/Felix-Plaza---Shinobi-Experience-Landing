@@ -58,21 +58,40 @@ export const ShinobiPosterLanding = () => {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validate()) return;
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    setIsLoading(true);
-    try {
-      const record = await registrationService.submitRegistration(formData);
-      setConfirmedPass(record);
-    } catch (err) {
-      console.error(err);
-      setErrors({ fullName: 'Failed to confirm reservation. Please try again.' });
-    } finally {
-      setIsLoading(false);
+  // Validate form first
+  if (!validate()) return;
+
+  setIsLoading(true);
+
+  try {
+    // Submit registration
+    const record = await registrationService.submitRegistration(formData);
+
+    // Meta Pixel: Track successful registration
+    if (
+      typeof window !== 'undefined' &&
+      typeof window.fbq === 'function'
+    ) {
+      window.fbq('track', 'CompleteRegistration');
     }
-  };
+
+    // Show confirmation pass
+    setConfirmedPass(record);
+
+  } catch (err) {
+    console.error(err);
+
+    setErrors({
+      fullName: 'Failed to confirm reservation. Please try again.',
+    });
+
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   return (
     <div className="relative min-h-screen bg-[#050505] text-[#FFF1D6] font-sans selection:bg-[#FF6A00] selection:text-white overflow-hidden pt-10 sm:pt-14 pb-0 px-4 sm:px-6 lg:px-8">

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Flame, CalendarDays, MapPin } from 'lucide-react';
+import { Flame, CalendarDays, MapPin, Clock } from 'lucide-react';
 import logoImg from '../assets/images/logo.avif';
 import narutoSagaImg from '../assets/images/naruto-saga.avif';
+import crunchyrollLogoImg from '../assets/images/Crunchyroll-logo.avif';
+import sonyLogoImg from '../assets/images/Sony.avif';
 
 const TORN_PAPER_TAGS = [
   {
@@ -24,23 +26,45 @@ const TORN_PAPER_TAGS = [
 
 export const Hero = () => {
   return (
-    <header className="flex flex-col items-center text-center mb-10 sm:mb-12">
-      {/* Logo (Felix Plaza) */}
-      <div className="mb-2.5">
-        <img
-          src={logoImg}
-          alt="Felix Plaza"
-          className="h-12 sm:h-16 md:h-20 w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] mx-auto"
-        />
+    <header className="flex flex-col items-center text-center mb-8 sm:mb-10 w-full">
+      {/* Top Header Banner Row: Centered Felix Plaza Logo + Top Right Crunchyroll & Sony Logos (No background, larger) */}
+      <div className="relative w-full flex flex-col sm:flex-row items-center justify-center pt-1 pb-3 mb-2">
+        {/* Center: Felix Plaza Logo & Presents */}
+        <div className="flex flex-col items-center justify-center text-center mx-auto">
+          <img
+            src={logoImg}
+            alt="Felix Plaza"
+            className="h-12 sm:h-16 md:h-20 w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] mx-auto"
+          />
+          <span className="text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.45em] text-[#FFD21F] uppercase mt-1.5 drop-shadow">
+            P R E S E N T S
+          </span>
+        </div>
+
+        {/* Top Right: Crunchyroll Logo & Sony Logo (Stacked Vertically on Desktop) */}
+        <div className="sm:absolute sm:top-0 sm:right-0 flex flex-row sm:flex-col items-center sm:items-end justify-center gap-3 sm:gap-2.5 mt-4 sm:mt-0">
+          {/* Crunchyroll Logo */}
+          <div className="flex items-center justify-center sm:justify-end shrink-0">
+            <img
+              src={crunchyrollLogoImg}
+              alt="Crunchyroll"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain brightness-110 drop-shadow-xl"
+            />
+          </div>
+
+          {/* Sony Logo */}
+          <div className="flex items-center justify-center sm:justify-end shrink-0">
+            <img
+              src={sonyLogoImg}
+              alt="Sony"
+              className="h-9 sm:h-12 md:h-14 w-auto object-contain drop-shadow-xl"
+            />
+          </div>
+        </div>
       </div>
 
-      {/* PRESENTS */}
-      <div className="text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.45em] text-[#FFD21F] uppercase mb-2 drop-shadow">
-        P R E S E N T S
-      </div>
-
-      {/* ANIME × NINJA × JAPANESE × ADVENTURE */}
-      <div className="flex items-center justify-center gap-1.5 sm:gap-3 w-full max-w-[340px] min-[380px]:max-w-md sm:max-w-xl my-2.5 opacity-95 px-1">
+      {/* ANIME × NINJA × JAPANESE × ADVENTURE Banner Line */}
+      <div className="flex items-center justify-center gap-1.5 sm:gap-3 w-full max-w-[340px] min-[380px]:max-w-md sm:max-w-xl my-2 opacity-95 px-1">
         <div className="h-[1.5px] flex-1 min-w-[12px] bg-gradient-to-r from-transparent via-[#F50087] to-[#FFD21F]" />
         <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#FF6A00] shrink-0" />
@@ -62,8 +86,15 @@ export const Hero = () => {
         />
       </div>
 
-      {/* Grand Shinobi Display Title with Naruto Orange/Yellow & Dela Gothic */}
+      {/* Main Title & Experience Stack */}
       <div className="my-3">
+        {/* MEET & GREET Text (Serif italic style, no background, no fire icons) */}
+        <div id="meet-and-greet-title" className="my-2.5 text-center">
+          <span className="font-serif italic font-medium text-xl sm:text-3xl md:text-4xl text-[#FFF1D6] tracking-wider uppercase drop-shadow-md select-none">
+            MEET &amp; GREET
+          </span>
+        </div>
+
         <div className="font-bebas text-lg sm:text-2xl tracking-[0.3em] text-[#FFD21F] uppercase mb-1 drop-shadow-sm">
           THE ULTIMATE
         </div>
@@ -75,7 +106,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Torn Paper Feature Tags matching Reference */}
+      {/* Torn Paper Feature Tags matching Reference Image */}
       <div className="my-3.5 w-full max-w-4xl mx-auto px-2">
         <div className="grid grid-cols-2 sm:flex sm:flex-nowrap items-center justify-center gap-2 sm:gap-2.5 md:gap-3.5 max-w-sm sm:max-w-none mx-auto">
           {TORN_PAPER_TAGS.map((item) => (
@@ -99,39 +130,44 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Subtitle Quote in Italic */}
+      {/* Subtitle Quote */}
       <p className="font-serif italic text-base sm:text-lg text-[#FFF1D6]/90 max-w-xl mx-auto mt-2 mb-3 leading-relaxed drop-shadow">
         &ldquo;Your ultimate shinobi experience awaits.&rdquo;
       </p>
 
-      {/* Horizontal Info Pill Bar (Date • Location • Feature) */}
-      <div className="mt-4 mb-3 w-full max-w-xl mx-auto px-4 flex justify-center">
+      {/* Horizontal Info Pill Bar with Updated Date & Time from Poster (25-27 SEP '26 | 1PM - 8PM | Sector 82 A, Gurugram) */}
+      <div className="mt-4 mb-3 w-full max-w-2xl mx-auto px-4 flex justify-center">
         <div className="w-full sm:w-auto inline-flex flex-col sm:flex-row items-center justify-center p-3 sm:px-6 sm:py-2.5 rounded-xl sm:rounded-full bg-[#090909]/95 border border-white/[0.10] shadow-[0_12px_32px_rgba(0,0,0,0.6)] backdrop-blur-md">
-          {/* Mobile View (< sm): Stacked neatly with zero overflow */}
+          {/* Mobile View (< sm): Stacked neatly */}
           <div className="flex flex-col items-center gap-1.5 sm:hidden w-full text-center">
-            <div className="flex items-center justify-center gap-1.5 font-bold tracking-wider text-xs text-white">
+            <div className="flex items-center justify-center gap-1.5 font-bold tracking-wider text-xs text-[#FFD21F]">
               <CalendarDays className="w-3.5 h-3.5 text-[#FFD21F] shrink-0" />
-              <span>05 SEPTEMBER 2026</span>
+              <span>25-27 SEP &apos;26</span>
+            </div>
+
+            <div className="flex items-center justify-center gap-1.5 font-bold tracking-wider text-xs text-white">
+              <Clock className="w-3.5 h-3.5 text-[#FF6A00] shrink-0" />
+              <span>1PM - 8PM</span>
             </div>
             
             <div className="flex items-center justify-center gap-1.5 font-bold tracking-wider text-xs text-[#16C7B7]">
               <MapPin className="w-3.5 h-3.5 text-[#16C7B7] shrink-0" />
               <span>SECTOR 82 A, GURUGRAM</span>
             </div>
-
-            <div className="w-full max-w-[180px] h-px bg-white/[0.08] my-0.5" />
-
-            <div className="flex items-center justify-center gap-1.5 text-xs">
-              <span className="text-[10px] font-semibold tracking-wider uppercase text-white/50">FEATURING</span>
-              <span className="font-bold text-[#FF6A00] tracking-wide">Shinobi Trials</span>
-            </div>
           </div>
 
-          {/* Desktop / Tablet View (>= sm): Single continuous horizontal pill */}
+          {/* Desktop / Tablet View (>= sm): Horizontal pill */}
           <div className="hidden sm:flex items-center justify-center gap-3 md:gap-4 text-xs md:text-sm">
-            <div className="flex items-center gap-1.5 font-bold tracking-wider text-white whitespace-nowrap">
+            <div className="flex items-center gap-1.5 font-bold tracking-wider text-[#FFD21F] whitespace-nowrap">
               <CalendarDays className="w-3.5 h-3.5 text-[#FFD21F] shrink-0" />
-              <span>05 SEPTEMBER 2026</span>
+              <span>25-27 SEP &apos;26</span>
+            </div>
+
+            <span className="text-white/20">•</span>
+
+            <div className="flex items-center gap-1.5 font-bold tracking-wider text-white whitespace-nowrap">
+              <Clock className="w-3.5 h-3.5 text-[#FF6A00] shrink-0" />
+              <span>1PM - 8PM</span>
             </div>
 
             <span className="text-white/20">•</span>
@@ -140,16 +176,10 @@ export const Hero = () => {
               <MapPin className="w-3.5 h-3.5 text-[#16C7B7] shrink-0" />
               <span>SECTOR 82 A, GURUGRAM</span>
             </div>
-
-            <span className="text-white/20">•</span>
-
-            <div className="flex items-center gap-1.5 whitespace-nowrap">
-              <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-white/50">FEATURING</span>
-              <span className="font-bold text-[#FF6A00] tracking-wide">Shinobi Trials</span>
-            </div>
           </div>
         </div>
       </div>
     </header>
   );
 };
+

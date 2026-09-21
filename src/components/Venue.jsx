@@ -115,12 +115,12 @@ export const Venue = ({ isOpen, onClose, onOpen }) => {
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 text-xs text-white/80">
                 <div className="flex items-center gap-1.5">
                   <CalendarDays className="w-3.5 h-3.5 text-[#FFD21F] shrink-0" />
-                  <span><strong className="text-white">Date:</strong> 05 September 2026</span>
+                  <span><strong className="text-white">Date:</strong> 25-27 SEP &apos;26</span>
                 </div>
                 <span className="text-white/25 hidden sm:inline">•</span>
                 <div className="flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-[#FF6A00] shrink-0" />
-                  <span>6:30 PM Onwards</span>
+                  <span>1:00 PM - 8:00 PM</span>
                 </div>
               </div>
 

@@ -65,7 +65,7 @@ export const ConfirmationModal = ({
           </div>
           <div className="flex justify-between items-center border-b border-white/[0.06] pb-2">
             <span className="text-[10px] font-bold text-[#FF8A00] uppercase tracking-wider">Event Date</span>
-            <span className="font-bold text-xs text-white">05 September 2026</span>
+            <span className="font-bold text-xs text-white">25-27 SEP &apos;26</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-[10px] font-bold text-[#FF8A00] uppercase tracking-wider">Venue</span>

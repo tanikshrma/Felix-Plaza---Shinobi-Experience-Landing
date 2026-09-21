@@ -246,7 +246,7 @@ export const Registration = ({
               <span className="text-white/30 shrink-0 select-none">•</span>
               <div className="flex items-center gap-1 whitespace-nowrap shrink-0">
                 <CalendarDays className="w-3 h-3 min-[360px]:w-3.5 min-[360px]:h-3.5 sm:w-4 sm:h-4 text-[#FFD21F] shrink-0" />
-                <span className="font-medium text-white/90">05 Sept 2026</span>
+                <span className="font-medium text-white/90">25-27 SEP &apos;26</span>
               </div>
               <span className="text-white/30 shrink-0 select-none">•</span>
               <div className="flex items-center gap-1 whitespace-nowrap shrink-0">
